@@ -122,7 +122,7 @@ export default function QuizMode() {
         <Navbar />
 
         <main className="flex min-h-[calc(100vh-73px)] items-center justify-center">
-          <p className="text-slate-400"> Quiz loading.... </p>
+          <p className="text-slate-400 font-bold"> Quiz loading.... </p>
         </main>
       </ProtectedRoute>
     );
@@ -138,24 +138,24 @@ export default function QuizMode() {
 
         <main className="mx-auto max-w-5xl px-4 py-10">
           <div className="mb-10 text-center">
-            <p className="text-sm font-medium text-slate-500"> Quiz completed </p>
+            <p className="text-sm font-bold text-slate-500"> Quiz completed </p>
             <h1 className="mt-2 text-4xl font-bold"> Your Result </h1>
-            <p className="mt-3 text-slate-400"> 20 ta savol yakunlandi. </p>
+            <p className="mt-3 text-slate-400 font-bold"> 20 ta savol yakunlandi. </p>
           </div>
 
           <div className="mb-10 grid gap-4 md:grid-cols-3">
             <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6 text-center">
-              <p className="text-sm text-slate-500"> Total </p>
+              <p className="text-sm text-slate-500 font-bold"> Total </p>
               <p className="mt-2 text-4xl font-bold"> {QUIZ_SIZE} </p>
             </div>
 
             <div className="rounded-2xl border border-emerald-900 bg-emerald-950/30 p-6 text-center">
-              <p className="text-sm text-emerald-400"> Correct </p>
+              <p className="text-sm text-emerald-400 font-bold"> Correct </p>
               <p className="mt-2 text-4xl font-bold text-emerald-400"> {correctCount} </p>
             </div>
 
             <div className="rounded-2xl border border-red-900 bg-red-950/30 p-6 text-center">
-              <p className="text-sm text-red-400"> Wrong </p>
+              <p className="text-sm text-red-400 font-bold"> Wrong </p>
               <p className="mt-2 text-4xl font-bold text-red-400"> {wrongCount} </p>
             </div>
           </div>
@@ -168,11 +168,11 @@ export default function QuizMode() {
                 <div key={`${result.questionId}-${index}`} className="rounded-2xl border border-slate-800 bg-slate-900 p-5">
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <p className="text-sm text-slate-500"> Question {index + 1} · ID {result.questionId} </p>
-                      <h2 className="mt-2 font-semibold text-white"> {question?.question} </h2>
+                      <p className="text-sm text-slate-500 font-bold"> Question {index + 1} · ID {result.questionId} </p>
+                      <h2 className="mt-2 font-bold text-white"> {question?.question} </h2>
                     </div>
 
-                    <span className={`rounded-full px-3 py-1 text-xs font-semibold ${
+                    <span className={`rounded-full px-3 py-1 text-xs font-bold ${
                       result.isCorrect ? "bg-emerald-500/10 text-emerald-400" : "bg-red-500/10 text-red-400" }`}>
                         {result.isCorrect ? "Correct" : "Wrong"}
                     </span>
@@ -180,13 +180,13 @@ export default function QuizMode() {
 
                   <div className="mt-5 grid gap-3 md:grid-cols-2">
                     <div className="rounded-xl bg-slate-950 p-4">
-                      <p className="text-xs uppercase tracking-wide text-slate-500"> Your answer </p>
-                      <p className="mt-2 text-sm text-slate-300"> {result.selectedAnswer} </p>
+                      <p className="text-xs uppercase tracking-wide text-slate-500 font-bold"> Your answer </p>
+                      <p className="mt-2 text-sm text-slate-300 font-bold"> {result.selectedAnswer} </p>
                     </div>
 
                     <div className="rounded-xl bg-slate-950 p-4">
-                      <p className="text-xs uppercase tracking-wide text-slate-500"> Correct answer </p>
-                      <p className="mt-2 text-sm text-emerald-400"> {result.correctAnswer} </p>
+                      <p className="text-xs uppercase tracking-wide text-slate-500 font-bold"> Correct answer </p>
+                      <p className="mt-2 text-sm text-emerald-400 font-bold"> {result.correctAnswer} </p>
                     </div>
                   </div>
                 </div>
@@ -195,7 +195,7 @@ export default function QuizMode() {
           </div>
 
           <div className="mt-10 flex justify-center">
-            <button onClick={startQuiz} className="rounded-xl bg-white px-6 py-3 font-semibold text-slate-950 transition hover:bg-slate-200">
+            <button onClick={startQuiz} className="rounded-xl bg-white px-6 py-3 font-bold text-slate-950 transition hover:bg-slate-200">
               Restart Quiz
             </button>
           </div>
@@ -211,7 +211,7 @@ export default function QuizMode() {
       <main className="mx-auto max-w-4xl px-4 py-10">
         <div className="mb-8 flex items-center justify-between">
           <div>
-            <p className="text-sm text-slate-500"> Quiz Mode </p>
+            <p className="text-sm text-slate-500 font-bold"> Quiz Mode </p>
             <h1 className="mt-1 text-2xl font-bold"> Question {currentIndex + 1} / {QUIZ_SIZE} </h1>
           </div>
 
@@ -232,8 +232,8 @@ export default function QuizMode() {
         <section className="rounded-2xl border border-slate-800 bg-slate-900 p-6 md:p-8">
           <div className="mb-8">
             <div className="mb-4 flex items-center gap-3">
-              <span className="rounded-lg bg-slate-800 px-3 py-1 text-xs text-slate-400"> ID #{currentQuestion.id} </span>
-              <span className="rounded-lg bg-slate-800 px-3 py-1 text-xs text-slate-400"> {currentQuestion.category} </span>
+              <span className="rounded-lg bg-slate-800 px-3 py-1 text-xs text-slate-400 font-bold"> ID #{currentQuestion.id} </span>
+              <span className="rounded-lg bg-slate-800 px-3 py-1 text-xs text-slate-400 font-bold"> {currentQuestion.category} </span>
             </div>
 
             <h2 className="text-2xl font-bold leading-9 text-white"> {currentQuestion.question} </h2>
@@ -257,7 +257,7 @@ export default function QuizMode() {
                 <button key={option} disabled={isAnswered} onClick={() => handleAnswer(option)}
                   className={`flex w-full items-center gap-4 rounded-xl border p-4 text-left transition ${style}`}>
                     <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-slate-800 text-sm font-bold text-slate-300"> {String.fromCharCode(65 + index)} </span>
-                    <span className="text-sm leading-6"> {option} </span>
+                    <span className="text-[18px] leading-6 font-bold"> {option} </span>
                 </button>
               );
             })}

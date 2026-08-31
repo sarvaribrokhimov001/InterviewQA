@@ -32,9 +32,9 @@ export default function QuestionsPage() {
 
       <main className="mx-auto max-w-7xl px-4 py-10">
         <div className="mb-8">
-          <p className="mb-2 text-sm font-medium text-slate-500"> Interview preparation </p>
+          <p className="mb-2 text-sm font-bold text-slate-500"> Interview preparation </p>
           <h1 className="text-4xl font-bold text-white"> Questions </h1>
-          <p className="mt-3 max-w-2xl text-slate-400"> JavaScript, TypeScript, React va Next.js bo'yicha interview savollarini ko'rib chiqing. </p>
+          <p className="mt-3 max-w-2xl font-bold text-slate-400"> JavaScript, TypeScript, React va Next.js bo'yicha interview savollarini ko'rib chiqing 👇 </p>
         </div>
 
         <div className="mb-8 max-w-2xl">
@@ -42,12 +42,12 @@ export default function QuestionsPage() {
         </div>
 
         <div className="mb-6">
-          <p className="text-sm text-slate-500"> {filteredQuestions.length} ta savol </p>
+          <p className="text-sm text-slate-500 font-bold"> {filteredQuestions.length} ta savol </p>
         </div>
 
         {filteredQuestions.length === 0 ? (
           <div className="rounded-2xl border border-slate-800 bg-slate-900 p-10 text-center">
-            <p className="text-slate-400"> Savol topilmadi. </p>
+            <p className="text-slate-400 font-bold"> Savol topilmadi ❌ </p>
           </div>
         ) : (
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
