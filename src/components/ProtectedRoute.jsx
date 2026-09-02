@@ -22,7 +22,7 @@ export default function ProtectedRoute({ children }) {
   if (loading) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-slate-950">
-        <p className="text-slate-400 text-5xl font-bold"> Loading.... </p>
+        <p className="text-slate-400 text-5xl font-bold max-[500px]:text-3xl"> Loading.... </p>
       </div>
     );
   }

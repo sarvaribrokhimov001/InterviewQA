@@ -63,30 +63,30 @@ function handleSubmit(event) {
 }
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-slate-950 px-4">
-      <div className="w-full max-w-md">
+    <main className="flex min-h-screen items-center justify-center bg-slate-950 px-4 max-[500px]:px-3">
+      <div className="w-full max-w-md max-[500px]:max-w-full">
         <div className="mb-8 text-center">
-          <h1 className="text-4xl font-bold text-white"> Interview<span className="text-slate-500">QA </span> </h1>
+          <h1 className="text-4xl font-bold text-white max-[500px]:text-3xl"> Interview<span className="text-slate-500">QA </span> </h1>
           <p className="mt-3 text-slate-400 font-bold"> Prepare for your technical interview </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="rounded-2xl border border-slate-800 bg-slate-900 p-6 shadow-2xl shadow-black/20">
+        <form onSubmit={handleSubmit} className="rounded-2xl border border-slate-800 bg-slate-900 p-6 shadow-2xl shadow-black/20 max-[500px]:p-4">
           <div className="space-y-5">
             <div>
-              <label htmlFor="username" className="mb-2 block text-xl font-bold text-slate-300"> Username </label>
+              <label htmlFor="username" className="mb-2 block text-xl font-bold text-slate-300 max-[500px]:text-base"> Username </label>
               <input id="username" type="text" value={username} onChange={(event) => setUsername(event.target.value)} placeholder="Enter username"
-                className="w-full font-bold rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white outline-none placeholder:text-slate-600 focus:border-slate-400"
+                className="w-full font-bold rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white outline-none placeholder:text-slate-600 focus:border-slate-400 max-[500px]:px-3 max-[500px]:py-2.5 max-[500px]:text-sm"
               />
             </div>
 
             <div>
-              <label htmlFor="password" className="mb-2 block text-xl font-bold text-slate-300"> Password </label>
+              <label htmlFor="password" className="mb-2 block text-xl font-bold text-slate-300 max-[500px]:text-base"> Password </label>
               <input id="password" type="password" value={password} onChange={(event) => setPassword(event.target.value)} placeholder="Enter password"
-                className="w-full font-bold rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white outline-none placeholder:text-slate-600"
+                className="w-full font-bold rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white outline-none placeholder:text-slate-600 max-[500px]:px-3 max-[500px]:py-2.5 max-[500px]:text-sm"
               />
             </div>
 
-            <button type="submit" className="w-full rounded-xl text-[18px] bg-white px-4 py-3 font-bold text-slate-950 transition hover:bg-slate-950 hover:text-white">
+            <button type="submit" className="w-full rounded-xl text-[18px] bg-white px-4 py-3 font-bold text-slate-950 transition hover:bg-slate-950 hover:text-white max-[500px]:text-base">
               Login
             </button>
           </div>

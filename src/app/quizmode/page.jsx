@@ -136,27 +136,27 @@ export default function QuizMode() {
       <ProtectedRoute>
         <Navbar />
 
-        <main className="mx-auto max-w-5xl px-4 py-10">
+        <main className="mx-auto max-w-5xl px-4 py-10 max-[500px]:px-3 max-[500px]:py-6"> 
           <div className="mb-10 text-center">
             <p className="text-sm font-bold text-slate-500"> Quiz completed </p>
-            <h1 className="mt-2 text-4xl font-bold"> Your Result </h1>
+            <h1 className="mt-2 text-4xl font-bold max-[500px]:text-3xl"> Your Result </h1>
             <p className="mt-3 text-slate-400 font-bold"> 20 ta savol yakunlandi. </p>
           </div>
 
           <div className="mb-10 grid gap-4 md:grid-cols-3">
-            <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6 text-center">
+            <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6 text-center max-[500px]:p-4">
               <p className="text-sm text-slate-500 font-bold"> Total </p>
-              <p className="mt-2 text-4xl font-bold"> {QUIZ_SIZE} </p>
+              <p className="mt-2 text-4xl font-bold max-[500px]:text-3xl"> {QUIZ_SIZE} </p>
             </div>
 
-            <div className="rounded-2xl border border-emerald-900 bg-emerald-950/30 p-6 text-center">
+            <div className="rounded-2xl border border-emerald-900 bg-emerald-950/30 p-6 text-center max-[500px]:p-4">
               <p className="text-sm text-emerald-400 font-bold"> Correct </p>
-              <p className="mt-2 text-4xl font-bold text-emerald-400"> {correctCount} </p>
+              <p className="mt-2 text-4xl font-bold max-[500px]:text-3xl text-emerald-400"> {correctCount} </p>
             </div>
 
-            <div className="rounded-2xl border border-red-900 bg-red-950/30 p-6 text-center">
+            <div className="rounded-2xl border border-red-900 bg-red-950/30 p-6 text-center max-[500px]:p-4">
               <p className="text-sm text-red-400 font-bold"> Wrong </p>
-              <p className="mt-2 text-4xl font-bold text-red-400"> {wrongCount} </p>
+              <p className="mt-2 text-4xl font-bold max-[500px]:text-3xl text-red-400"> {wrongCount} </p>
             </div>
           </div>
 
@@ -165,8 +165,8 @@ export default function QuizMode() {
               const question = interviewQuestions.find((item) => item.id === result.questionId);
 
               return (
-                <div key={`${result.questionId}-${index}`} className="rounded-2xl border border-slate-800 bg-slate-900 p-5">
-                  <div className="flex items-start justify-between gap-4">
+                <div key={`${result.questionId}-${index}`} className="rounded-2xl border border-slate-800 bg-slate-900 p-5 max-[500px]:rounded-xl max-[500px]:p-4">
+                  <div className="flex items-start justify-between gap-4 max-[500px]:flex-col max-[500px]:gap-3">
                     <div>
                       <p className="text-sm text-slate-500 font-bold"> Question {index + 1} · ID {result.questionId} </p>
                       <h2 className="mt-2 font-bold text-white"> {question?.question} </h2>
@@ -174,17 +174,17 @@ export default function QuizMode() {
 
                     <span className={`rounded-full px-3 py-1 text-xs font-bold ${
                       result.isCorrect ? "bg-emerald-500/10 text-emerald-400" : "bg-red-500/10 text-red-400" }`}>
-                        {result.isCorrect ? "Correct" : "Wrong"}
+                        {result.isCorrect ? "Correct" : "Wrong"} 
                     </span>
                   </div>
 
                   <div className="mt-5 grid gap-3 md:grid-cols-2">
-                    <div className="rounded-xl bg-slate-950 p-4">
+                    <div className="rounded-xl bg-slate-950 p-4 max-[500px]:p-3">
                       <p className="text-xs uppercase tracking-wide text-slate-500 font-bold"> Your answer </p>
                       <p className="mt-2 text-sm text-slate-300 font-bold"> {result.selectedAnswer} </p>
                     </div>
 
-                    <div className="rounded-xl bg-slate-950 p-4">
+                    <div className="rounded-xl bg-slate-950 p-4 max-[500px]:p-3">
                       <p className="text-xs uppercase tracking-wide text-slate-500 font-bold"> Correct answer </p>
                       <p className="mt-2 text-sm text-emerald-400 font-bold"> {result.correctAnswer} </p>
                     </div>
@@ -208,20 +208,20 @@ export default function QuizMode() {
     <ProtectedRoute>
       <Navbar />
 
-      <main className="mx-auto max-w-4xl px-4 py-10">
-        <div className="mb-8 flex items-center justify-between">
+      <main className="mx-auto max-w-4xl px-4 py-10 max-[500px]:px-3 max-[500px]:py-6">
+        <div className="mb-8 flex items-center justify-between max-[500px]:mb-5">
           <div>
             <p className="text-sm text-slate-500 font-bold"> Quiz Mode </p>
-            <h1 className="mt-1 text-2xl font-bold"> Question {currentIndex + 1} / {QUIZ_SIZE} </h1>
+            <h1 className="mt-1 text-2xl font-bold max-[500px]:text-lg"> Question {currentIndex + 1} / {QUIZ_SIZE} </h1>
           </div>
 
-          <div className={`flex h-16 w-16 items-center justify-center rounded-full border-4 ${
+          <div className={`flex h-16 w-16 items-center justify-center rounded-full border-4 max-[500px]:h-12 max-[500px]:w-12 max-[500px]:border-2 ${
             timeLeft <= 10 ? "border-red-500 text-red-400" : "border-slate-700 text-white" }`}>
-              <span className="text-xl font-bold"> {timeLeft} </span>
+              <span className="text-xl font-bold max-[500px]:text-base"> {timeLeft} </span>
           </div>
         </div>
 
-        <div className="mb-8 h-2 overflow-hidden rounded-full bg-slate-800">
+        <div className="mb-8 h-2 overflow-hidden rounded-full bg-slate-800 max-[500px]:mb-5 max-[500px]:h-1.5">
           <div className="h-full bg-white transition-all duration-300" style={{
             width: `${
               ((currentIndex + 1) / QUIZ_SIZE) * 100
@@ -229,14 +229,14 @@ export default function QuizMode() {
           }} />
         </div>
 
-        <section className="rounded-2xl border border-slate-800 bg-slate-900 p-6 md:p-8">
+        <section className="rounded-2xl border border-slate-800 bg-slate-900 p-6 md:p-8 max-[500px]:rounded-xl max-[500px]:p-4">
           <div className="mb-8">
             <div className="mb-4 flex items-center gap-3">
-              <span className="rounded-lg bg-slate-800 px-3 py-1 text-xs text-slate-400 font-bold"> ID #{currentQuestion.id} </span>
-              <span className="rounded-lg bg-slate-800 px-3 py-1 text-xs text-slate-400 font-bold"> {currentQuestion.category} </span>
+              <span className="rounded-lg bg-slate-800 px-3 py-1 text-xs text-slate-400 font-bold max-[500px]:px-2 max-[500px]:py-1 max-[500px]:text-[10px]"> ID #{currentQuestion.id} </span>
+              <span className="rounded-lg bg-slate-800 px-3 py-1 text-xs text-slate-400 font-bold max-[500px]:px-2 max-[500px]:py-1 max-[500px]:text-[10px]"> {currentQuestion.category} </span>
             </div>
 
-            <h2 className="text-2xl font-bold leading-9 text-white"> {currentQuestion.question} </h2>
+            <h2 className="text-2xl font-bold leading-9 text-white max-[500px]:text-lg max-[500px]:leading-7"> {currentQuestion.question} </h2>
           </div>
 
           <div className="grid gap-4">
@@ -255,9 +255,9 @@ export default function QuizMode() {
 
               return (
                 <button key={option} disabled={isAnswered} onClick={() => handleAnswer(option)}
-                  className={`flex w-full items-center gap-4 rounded-xl border p-4 text-left transition ${style}`}>
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-slate-800 text-sm font-bold text-slate-300"> {String.fromCharCode(65 + index)} </span>
-                    <span className="text-[18px] leading-6 font-bold"> {option} </span>
+                  className={`flex w-full items-center gap-4 rounded-xl border p-4 text-left transition ${style} max-[500px]:gap-3 max-[500px]:p-3`}>
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-slate-800 text-sm font-bold text-slate-300 max-[500px]:h-8 max-[500px]:w-8"> {String.fromCharCode(65 + index)} </span>
+                    <span className="text-[18px] leading-6 font-bold max-[500px]:text-sm max-[500px]:leading-5"> {option} </span>
                 </button>
               );
             })}
